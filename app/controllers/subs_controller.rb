@@ -38,7 +38,7 @@ class SubsController < ApplicationController
     #creates a record in memory/ rendering the new form
     @sub = Sub.new
     #default is new.html
-    render partial: 'form'
+    render partial: 'subs/form'
   end
 
   def create
@@ -56,7 +56,7 @@ class SubsController < ApplicationController
   def edit
     #edit @model_name = Model_name.find(params[:id])
     #search records to update, and render the edit form
-    render partial: 'form'
+    render partial: 'subs/form'
   end
 
   def update
