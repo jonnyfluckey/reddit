@@ -8,7 +8,7 @@ class SubsController < ApplicationController
   # -Sorting should go into the models
 
   #callbacks
-  #before_action
+  # before_action
   # after_action
   # skip_before_action
   # skip_after_action
@@ -23,20 +23,22 @@ class SubsController < ApplicationController
     #shows all the items in the model
     #index @model_names = Model_name.all
     @subs = Sub.all
+    #default return is index.html page
 
   end
 
   def show
     #show @model_name = Model_name.find(params[:id])
     #shows a specific records
-    
+    #default is show.html.erb
   end
 
   def new
     #new @model_name = Model_name.new 
     #creates a record in memory/ rendering the new form
     @sub = Sub.new
-    
+    #default is new.html
+    render partial: 'form'
   end
 
   def create
@@ -54,6 +56,7 @@ class SubsController < ApplicationController
   def edit
     #edit @model_name = Model_name.find(params[:id])
     #search records to update, and render the edit form
+    render partial: 'form'
   end
 
   def update
@@ -89,7 +92,7 @@ class SubsController < ApplicationController
   # always private
     # params.require(:model_name).permit(:everything in the db)
 
-    def subs_params
+    def sub_params
       params.require(:sub).permit(:name)
     end
 
